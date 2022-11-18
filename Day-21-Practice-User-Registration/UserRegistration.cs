@@ -36,5 +36,12 @@ namespace Day_21_Practice_User_Registration
         {
             return Regex.IsMatch(userdata, REGEX_MOBILE);
         }
+
+        public static string REGEX_PASSWORD = "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$";
+        //this function is use for Password validate
+        public bool validatepassword(string userdata)
+        {
+            return Regex.IsMatch(userdata, REGEX_PASSWORD);
+        }
     }
 }

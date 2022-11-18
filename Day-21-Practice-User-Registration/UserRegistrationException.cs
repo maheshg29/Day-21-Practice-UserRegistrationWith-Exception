@@ -37,6 +37,14 @@ namespace Day_21_Practice_User_Registration
             Console.WriteLine("Please Enter valid Mobile Number");
         }
     }
+
+    public class InvalidPasswordException : Exception
+    {
+        public InvalidPasswordException(string message) : base(message)
+        {
+            Console.WriteLine("Please Enter valid Password");
+        }
+    }
 }
 
 

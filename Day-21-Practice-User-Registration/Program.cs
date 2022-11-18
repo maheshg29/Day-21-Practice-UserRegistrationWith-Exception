@@ -111,6 +111,30 @@ namespace Day_21_Practice_User_Registration
                 Console.WriteLine(m);    
             }
 
+            try
+            {
+                Console.WriteLine("Enter Password");
+                Console.WriteLine("NOTE:- Password minimum 8 Characters ");
+
+                string userpassword = Console.ReadLine();
+
+                bool value = userRegistration.validatepassword(userpassword);
+
+                if (value)
+                {
+                    Console.WriteLine("Given Password  Accepted");
+                }
+                else
+                {
+                    throw new InvalidPasswordException("Please Enter valid Password");
+                    
+                }
+            }
+            catch(InvalidPasswordException p)
+            {
+                Console.WriteLine(p);
+            }
+
         }
     }
 }
