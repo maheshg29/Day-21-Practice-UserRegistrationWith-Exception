@@ -62,6 +62,30 @@ namespace Day_21_Practice_User_Registration
                 Console.WriteLine(l);
             }
 
+            try
+            {
+                Console.WriteLine("Enter Mail ID");
+                Console.WriteLine("NOTE:- E.g. abc.xyz@bl.co.in - Email has 3 mandatory parts (abc, bl&co) and 2 optional (xyz & in) with\r\nprecise @ and . positions");
+
+                string usermail = Console.ReadLine();
+
+                bool value = userRegistration.validatemail(usermail);
+
+                if (value)
+                {
+                    Console.WriteLine("Given Mail ID  Accepted");
+                }
+                else
+                {
+                    throw new InvalidEmailException("Please Enter Valid Mail ID");
+                    
+                }
+            }
+            catch(InvalidEmailException e)
+            {
+                Console.WriteLine(e);
+            }
+
         }
     }
 }

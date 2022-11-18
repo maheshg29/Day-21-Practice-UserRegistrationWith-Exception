@@ -22,5 +22,12 @@ namespace Day_21_Practice_User_Registration
         {
             return Regex.IsMatch(userdata, REGEX_LASTNAME);
         }
+
+        public static string REGEX_MAILID = "[a-zA-Z0-9_\\-\\.]+[@][a-z]+[\\.][a-z]{2,3}";
+        //this function is use for Mail ID validate
+        public bool validatemail(string userdata)
+        {
+            return Regex.IsMatch(userdata, REGEX_MAILID);
+        }
     }
 }

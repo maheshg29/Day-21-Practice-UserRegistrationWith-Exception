@@ -21,6 +21,14 @@ namespace Day_21_Practice_User_Registration
             Console.WriteLine("Please Enter valid Name ");
         }
     }
+
+    public class InvalidEmailException : Exception
+    {
+        public InvalidEmailException(string message) : base(message)
+        {
+            Console.WriteLine("Please Enter valid Email ID ");
+        }
+    }
 }
 
 
