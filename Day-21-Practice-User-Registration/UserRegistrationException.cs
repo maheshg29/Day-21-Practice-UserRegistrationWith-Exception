@@ -13,6 +13,14 @@ namespace Day_21_Practice_User_Registration
             Console.WriteLine("Please Enter valid Name ");
         }
     }
+
+    public class InvalidLastNameException : Exception
+    {
+        public InvalidLastNameException(string message) : base(message)
+        {
+            Console.WriteLine("Please Enter valid Name ");
+        }
+    }
 }
 
 
