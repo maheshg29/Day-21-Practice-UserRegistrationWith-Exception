@@ -3,6 +3,7 @@ using System.Diagnostics.Metrics;
 using System.Numerics;
 using System.Xml.Linq;
 using System;
+using System.Reflection;
 
 namespace Day_21_Practice_User_Registration
 {
@@ -84,6 +85,30 @@ namespace Day_21_Practice_User_Registration
             catch(InvalidEmailException e)
             {
                 Console.WriteLine(e);
+            }
+
+
+            Console.WriteLine("Enter Mobile Number");
+            Console.WriteLine("NOTE:- Mobile Format - E.g. 91 9919819801 - Country code follow by space and 10 digit number");
+            try
+            {
+                string usermobile = Console.ReadLine();
+
+                bool value = userRegistration.validatemobile(usermobile);
+
+                if (value)
+                {
+                    Console.WriteLine("Given Mobile Number  Accepted");
+                }
+                else
+                {
+                    throw new ValidMobileNumberException("Please Enter valid Mobile number");
+                  
+                }
+            }
+            catch (ValidMobileNumberException m)
+            {
+                Console.WriteLine(m);    
             }
 
         }
